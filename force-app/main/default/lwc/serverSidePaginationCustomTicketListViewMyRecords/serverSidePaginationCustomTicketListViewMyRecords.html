@@ -1,0 +1,46 @@
+<template>
+    <!--Arquivo com a guia Meus tickets, que exibe a tabela com os registros que o owner é um usuário do time de savers-->
+
+    <template lwc:if={isLoading}>
+        <lightning-spinner variant="brand" size="large"></lightning-spinner>
+    </template>
+
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__body">
+                            <div class="slds-size_1-of-3">
+                                <lightning-combobox
+                                    name="statusFilter"
+                                    label="Filtrar por Status"
+                                    placeholder="Selecione o Status"
+                                    options={statusOptions}
+                                    value={selectedStatus}
+                                    onchange={handleStatusChange}
+                                    field-level-help="Selecione um status para filtrar a tabela">
+                                </lightning-combobox>
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <lightning-input type="search" title="Faça uma busca por Nº ou assunto" placeholder="Buscar Ticket" onchange={handleSearch}></lightning-input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <lightning-datatable key-field="Id" data={recordsToDisplay} hide-checkbox-column columns={columns} onrowselection={handleRowSelection} onrowaction={handleRowAction}>
+    </lightning-datatable>
+
+
+    <c-paginator-custom-ticket-list-view lwc:if={showPaginator} page-size={pageSize} total-records={totalRecords}
+        is-client-side-pagination="true" onpaginationchange={paginationChangeHandler}>
+    </c-paginator-custom-ticket-list-view>
+
+
+    <template if:false={hasRecords}>
+        <div class="slds-align_absolute-center slds-text-heading_medium slds-p-around_small">No records to displays</div>
+    </template>
+</template>

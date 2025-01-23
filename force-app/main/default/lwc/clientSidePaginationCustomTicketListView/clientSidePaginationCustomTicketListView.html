@@ -1,0 +1,18 @@
+<template>
+    <!--Arquivo com a guia Todos os tickets Savers, que exibe a tabela com os registros que ainda estão na fila Tickets Savers-->
+
+    <template lwc:if={isLoading}>
+        <lightning-spinner variant="brand" size="large"></lightning-spinner>
+    </template>
+
+    <lightning-datatable key-field="Id" data={recordsToDisplay} hide-checkbox-column columns={columns} onrowselection={handleRowSelection} onrowaction={handleRowAction}>
+    </lightning-datatable>
+
+    <c-paginator-custom-ticket-list-view lwc:if={showPaginator} page-size={pageSize} total-records={totalRecords}
+        is-client-side-pagination="true" onpaginationchange={paginationChangeHandler}>
+    </c-paginator-custom-ticket-list-view>
+    
+    <template if:false={hasRecords}>
+        <div class="slds-align_absolute-center slds-text-heading_medium slds-p-around_small">No records to displays</div>
+    </template>
+</template>

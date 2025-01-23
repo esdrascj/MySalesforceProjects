@@ -1,0 +1,28 @@
+<template>
+  <lightning-record-edit-form 
+      object-api-name={messagingEndUserObject}
+      onsuccess={handleSuccess}
+      onerror={handleError}>
+
+      <p><lightning-formatted-rich-text value="Insira o nome no campo &lt;strong&gt;Nome do usuário do Messaging!&lt;/strong&gt;" ></lightning-formatted-rich-text></p><br>
+      <p><lightning-formatted-rich-text  value="No campo &lt;strong&gt;Chave da plataforma do Messaging&lt;/strong&gt;, insira o número de telefone no formato: &lt;strong&gt;55DDD00000000(somente os números sem espaço ou caracteres)!&lt;/strong&gt;"></lightning-formatted-rich-text></p><br>
+      <p><lightning-formatted-rich-text value="Atenção para inserir o número correto com 9 ou sem 9 depois do DDD."></lightning-formatted-rich-text></p>
+      <lightning-messages></lightning-messages>
+
+      <lightning-input-field field-name="Name" onchange={handleNameChange}></lightning-input-field>
+      <lightning-input-field field-name="MessagingPlatformKey" onchange={handlePlatformKeyChange}></lightning-input-field>
+      <lightning-input-field field-name="MessagingConsentStatus" value="ImplicitlyOptedIn" disabled="true"></lightning-input-field>
+      <lightning-input-field field-name="MessagingChannelId" value="0MjV2000000GOftKAG" disabled="true"></lightning-input-field>
+      <lightning-input-field field-name="MessageType" value="WhatsApp" disabled="true"></lightning-input-field>
+      
+      <div class="slds-align_absolute-center slds-p-around_medium">
+        <lightning-button
+          class="slds-m-around_xx-small"
+          label="Criar Messaging User"
+          onclick={handleSave}
+          variant="brand">
+        </lightning-button>
+      </div>
+
+  </lightning-record-edit-form>
+</template>

@@ -1,0 +1,41 @@
+<template>
+    <!--arquivo com o componente de paginação, para as guias da tabela-->
+    <lightning-layout class="slds-p-around_small">
+        <lightning-layout-item size="1" class="slds-m-top_small">
+            Itens por página:
+        </lightning-layout-item>
+
+        <lightning-layout-item size="1" class="slds-m-top_x-small">
+            <lightning-combobox options={getItemsPerPage} variant="label-hidden" value={pageSize}
+                onchange={handlePageSizeChange}></lightning-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item size="2"></lightning-layout-item>
+
+        <lightning-layout-item size="4" class="slds-align_absolute-center">
+            {recordsFrom} – {recordsTo} de {totalRecords}
+        </lightning-layout-item>
+
+        <lightning-layout-item size="4" class="slds-text-align_right">
+            <a title="Vá para a primeira página" onclick={goToFirstPageHandler} class={previousButtonsStyle}
+                lwc:if={isClientSidePagination}>
+                &lt;&lt;</a>
+            <a label="<" title="Página anterior" onclick={previousPageHandler} class={previousButtonsStyle}>
+                &lt; </a>
+            <select class="page-selector" onchange={goToPageHandler} lwc:if={isClientSidePagination}>
+                <template for:each={pageNumbersForPicklist} for:item="option">
+                    <option key={option.value} value={option.value} selected={option.selected}>{option.label}</option>
+                </template>
+            </select>
+            <span lwc:else class="m-15">
+                <strong title="Número da página atual">{pageNumber}</strong> de
+                <span title="Total de páginas"> {totalPages}</span>
+            </span>
+
+            <a title="Próxima página" onclick={nextPageHandler} class={nextButtonsStyle}>
+                &gt;</a>
+            <a label="Vá para a última página" title="Vá para a última página" onclick={goToLastPageHandler} class={nextButtonsStyle}
+                lwc:if={isClientSidePagination}>
+                &gt;&gt; </a>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

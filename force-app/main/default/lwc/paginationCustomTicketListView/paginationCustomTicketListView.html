@@ -1,0 +1,58 @@
+<template>
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:case" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="Tickets Savers">Tickets Savers</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <template if:true={isModalOpen}>
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading" aria-modal="true" class="slds-modal slds-fade-in-open">
+                            <div class="slds-modal__container">
+                                <header class="slds-modal__header">
+                                    <h2 id="modal-heading" class="slds-text-heading_medium">Selecionar Tipo de Registro</h2>
+                                </header>
+                                <div class="slds-modal__content slds-p-around_medium">
+                                    <lightning-combobox
+                                        label="Tipos de Registro"
+                                        placeholder="Selecione"
+                                        value={selectedRecordTypeId}
+                                        options={recordTypeOptions}
+                                        onchange={handleRecordTypeChange}>
+                                    </lightning-combobox>
+                                </div>
+                                <footer class="slds-modal__footer">
+                                    <lightning-button label="Cancelar" onclick={handleCloseModal}></lightning-button>
+                                    <lightning-button variant="brand" label="Criar" onclick={navigateToNewRecord}></lightning-button>
+                                </footer>
+                            </div>
+                        </section>
+                        <div class="slds-backdrop slds-backdrop_open"></div>
+                    </template>
+                    <div>
+                        <div slot="actions" class="slds-grid slds-grid_align-spread slds-p-right_x-small">
+                            <lightning-button label="Criar" onclick={handleOpenModal}></lightning-button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <lightning-card>
+        <lightning-tabset>
+            <lightning-tab label="Meus Tickets ">
+                <c-server-side-pagination-custom-ticket-list-view-my-records></c-server-side-pagination-custom-ticket-list-view-my-records>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>
