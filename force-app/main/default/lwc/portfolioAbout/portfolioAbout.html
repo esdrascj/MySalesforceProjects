@@ -1,0 +1,29 @@
+<template>
+    <section id="about" class="about-container">
+        <div class="section-header">
+            <h2>Sobre Mim</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="about-content">
+            <div class="profile-image">
+                <img src={profileImage} alt="Foto de perfil profissional">
+                <div class="badge-container">
+                    <template for:each={certifications} for:item="cert">
+                        <div key={cert.id} class="certification-badge">
+                            <img src={cert.imageUrl} alt={cert.name} title={cert.name}>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>{biography}</p>
+                <h3>Valores Profissionais</h3>
+                <ul class="values-list">
+                    <template for:each={professionalValues} for:item="value">
+                        <li key={value}>{value}</li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </section>
+</template>

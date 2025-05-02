@@ -1,0 +1,54 @@
+<template>
+    <section id="contact" class="contact-container">
+        <div class="section-header">
+            <h2>Entre em Contato</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Vamos Conversar</h3>
+                <p>{contactMessage}</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <lightning-icon icon-name="utility:email" size="small"></lightning-icon>
+                        <span>{email}</span>
+                    </div>
+                    <div class="contact-method">
+                        <lightning-icon icon-name="utility:call" size="small"></lightning-icon>
+                        <span>{phone}</span>
+                    </div>
+                    <div class="contact-method">
+                        <lightning-icon icon-name="utility:user" size="small"></lightning-icon>
+                        <a href={linkedInUrl} target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-method">
+                        <lightning-icon icon-name="utility:trail" size="small"></lightning-icon>
+                        <a href={trailblazerUrl} target="_blank">Trailblazer Profile</a>
+                    </div>
+                </div>
+                
+                <div class="resume-download">
+                    <a href={resumeUrl} download class="download-button">
+                        <lightning-icon icon-name="utility:download" size="small"></lightning-icon>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <lightning-input label="Nome" type="text" name="name" onchange={handleInputChange}></lightning-input>
+                <lightning-input label="Email" type="email" name="email" onchange={handleInputChange}></lightning-input>
+                <lightning-textarea label="Mensagem" name="message" onchange={handleInputChange}></lightning-textarea>
+                <lightning-button label="Enviar Mensagem" variant="brand" onclick={handleSubmit} class="submit-button"></lightning-button>
+                
+                <template if:true={showSuccess}>
+                    <div class="success-message">
+                        <lightning-icon icon-name="utility:success" size="small"></lightning-icon>
+                        <span>Mensagem enviada com sucesso! Entrarei em contato em breve.</span>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+</template>

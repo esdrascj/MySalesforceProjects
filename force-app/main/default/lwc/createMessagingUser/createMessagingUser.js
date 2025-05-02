@@ -1,7 +1,7 @@
 import { LightningElement, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import MESSAGING_END_USER_OBJECT from '@salesforce/schema/MessagingEndUser';
-import createMessagingUser from '@salesforce/apex/CreateMessagingUserController.createMessagingUser';
+//import createMessagingUser from '@salesforce/apex/CreateMessagingUserController.createMessagingUser';
 
 export default class CreateMessagingUser extends LightningElement {
     messagingEndUserObject = MESSAGING_END_USER_OBJECT;

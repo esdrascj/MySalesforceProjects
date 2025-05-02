@@ -1,0 +1,26 @@
+<template>
+    <section id="skills" class="skills-container">
+        <div class="section-header">
+            <h2>Habilidades Técnicas</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="skills-grid">
+            <template for:each={skillCategories} for:item="category">
+                <div key={category.id} class="skill-category">
+                    <h3>{category.name}</h3>
+                    <template for:each={category.skills} for:item="skill">
+                        <div key={skill.id} class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">{skill.name}</span>
+                                <span class="skill-percentage">{skill.percentage}%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style={skill.progressStyle}></div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </section>
+</template>

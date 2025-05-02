@@ -1,0 +1,46 @@
+<template>
+    <section id="testimonials" class="testimonials-container">
+        <div class="section-header">
+            <h2>Depoimentos</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="testimonials-carousel">
+            <div class="carousel-container">
+                <template if:true={showPrevious}>
+                    <button class="carousel-nav prev" onclick={previousTestimonial}>
+                        <lightning-icon icon-name="utility:chevronleft" size="small"></lightning-icon>
+                    </button>
+                </template>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">"</div>
+                    <p class="testimonial-text">{activeTestimonial.quote}</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src={activeTestimonial.imageUrl} alt={activeTestimonial.name}>
+                        </div>
+                        <div class="author-info">
+                            <h4>{activeTestimonial.name}</h4>
+                            <p>{activeTestimonial.title} | {activeTestimonial.company}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <template if:true={showNext}>
+                    <button class="carousel-nav next" onclick={nextTestimonial}>
+                        <lightning-icon icon-name="utility:chevronright" size="small"></lightning-icon>
+                    </button>
+                </template>
+            </div>
+            
+            <div class="carousel-dots">
+                <template for:each={testimonials} for:item="testimonial" for:index="index">
+                    <span key={testimonial.id} 
+                          class={getDotsClass} 
+                          data-index={index} 
+                          onclick={goToTestimonial}></span>
+                </template>
+            </div>
+        </div>
+    </section>
+</template>

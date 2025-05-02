@@ -1,0 +1,98 @@
+.contact-container {
+    padding: 60px 0;
+}
+
+.contact-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: #16325c;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: #3e3e3c;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #16325c;
+}
+
+.contact-method a {
+    color: #0070d2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-method a:hover {
+    color: #005fb2;
+    text-decoration: underline;
+}
+
+.resume-download {
+    margin-top: 20px;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #0070d2;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #005fb2;
+}
+
+.contact-form {
+    background-color: #f7f9fb;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form lightning-input,
+.contact-form lightning-textarea {
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.success-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e1f3d8;
+    color: #2e844a;
+    border-radius: 4px;
+}

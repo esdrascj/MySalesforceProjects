@@ -1,0 +1,30 @@
+<template>
+    <header class="header-container">
+        <div class="header-content">
+            <div class="logo-name">
+                <h1>{fullName}</h1>
+                <h2>{title}</h2>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <template for:each={navItems} for:item="item">
+                        <li key={item.id}>
+                            <a href={item.href} onclick={handleNavClick}>{item.label}</a>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+        <div class="header-cta">
+            <lightning-button variant="brand" label="Entre em Contato" title="Entre em Contato" 
+                              onclick={scrollToContact} class="cta-button"></lightning-button>
+        </div>
+        <div class="social-links">
+            <template for:each={socialLinks} for:item="social">
+                <a key={social.id} href={social.url} target="_blank" class="social-icon">
+                    <lightning-icon icon-name={social.icon} size="small"></lightning-icon>
+                </a>
+            </template>
+        </div>
+    </header>
+</template>

@@ -1,0 +1,76 @@
+.about-container {
+    padding: 60px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: #0070d2;
+    margin-bottom: 10px;
+}
+
+.section-divider {
+    height: 4px;
+    width: 60px;
+    background-color: #0070d2;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.profile-image {
+    flex: 0 0 300px;
+}
+
+.profile-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.certification-badge img {
+    height: 60px;
+    width: auto;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #3e3e3c;
+}
+
+.about-text h3 {
+    font-size: 1.3rem;
+    color: #16325c;
+    margin-bottom: 15px;
+}
+
+.values-list {
+    padding-left: 20px;
+}
+
+.values-list li {
+    margin-bottom: 8px;
+    color: #3e3e3c;
+}

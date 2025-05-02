@@ -1,0 +1,32 @@
+<template>
+    <section id="projects" class="projects-container">
+        <div class="section-header">
+            <h2>Projetos em Destaque</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="projects-grid">
+            <template for:each={projects} for:item="project">
+                <div key={project.id} class="project-card">
+                    <div class="project-content">
+                        <h3>{project.name}</h3>
+                        <div class="project-tags">
+                            <template for:each={project.tags} for:item="tag">
+                                <span key={tag} class="project-tag">{tag}</span>
+                            </template>
+                        </div>
+                        <p>{project.description}</p>
+                        <h4>Resultados:</h4>
+                        <ul class="project-results">
+                            <template for:each={project.results} for:item="result">
+                                <li key={result}>{result}</li>
+                            </template>
+                        </ul>
+                    </div>
+                    <div class="project-image">
+                        <img src={project.imageUrl} alt={project.name}>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+</template>
