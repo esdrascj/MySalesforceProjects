@@ -290,7 +290,7 @@
         {
           "active": true,
           "defaultValue": false,
-          "label": "NearAddress",
+          "label": "Near Address",
           "validFor": null,
           "value": "NearAddress"
         },
@@ -311,7 +311,7 @@
         {
           "active": true,
           "defaultValue": false,
-          "label": "ExtendedZip",
+          "label": "Extended Zip",
           "validFor": null,
           "value": "ExtendedZip"
         },
@@ -726,7 +726,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -928,7 +928,7 @@
       "restrictedDelete": false
     },
     {
-      "cascadeDelete": true,
+      "cascadeDelete": false,
       "childSObject": "AIRecordInsight",
       "deprecatedAndHidden": false,
       "field": "TargetId",
@@ -945,6 +945,36 @@
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": "ActivityHistories",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "AppUsageAssignment",
+      "deprecatedAndHidden": false,
+      "field": "RecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "AppUsageAssignments",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ApprovalSubmission",
+      "deprecatedAndHidden": false,
+      "field": "RelatedRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ApprovalSubmissions",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ApprovalWorkItem",
+      "deprecatedAndHidden": false,
+      "field": "RelatedRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ApprovalWorkItems",
       "restrictedDelete": false
     },
     {
@@ -975,6 +1005,16 @@
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": "RecordAssociatedGroups",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "CollaborationGroupRecordChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "RecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
       "restrictedDelete": false
     },
     {
@@ -1154,7 +1194,7 @@
       "field": "RelatedRecordId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
-      "relationshipName": null,
+      "relationshipName": "FlowOrchestrationWorkItems",
       "restrictedDelete": false
     },
     {
@@ -1165,6 +1205,36 @@
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "NetworkActivityAudit",
+      "deprecatedAndHidden": false,
+      "field": "ParentEntityId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ParentEntities",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "NetworkFeedResponseMetric",
+      "deprecatedAndHidden": false,
+      "field": "ParentRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "NetworkUserHistoryRecent",
+      "deprecatedAndHidden": false,
+      "field": "RecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "NetworkUserHistoryRecentToRecord",
       "restrictedDelete": false
     },
     {
@@ -1229,12 +1299,32 @@
     },
     {
       "cascadeDelete": true,
+      "childSObject": "PendingServiceRoutingInteractionInfo",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
       "childSObject": "ProcessInstance",
       "deprecatedAndHidden": false,
       "field": "TargetObjectId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": "ProcessInstances",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ProcessInstanceChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
       "restrictedDelete": false
     },
     {

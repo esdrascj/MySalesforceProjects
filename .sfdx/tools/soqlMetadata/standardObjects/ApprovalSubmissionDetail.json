@@ -1,0 +1,503 @@
+{
+  "fields": [
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Approval Submission Detail ID",
+      "name": "Id",
+      "nillable": false,
+      "picklistValues": [],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "id"
+    },
+    {
+      "aggregatable": false,
+      "custom": false,
+      "defaultValue": false,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Deleted",
+      "name": "IsDeleted",
+      "nillable": false,
+      "picklistValues": [],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "boolean"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": false,
+      "inlineHelpText": null,
+      "label": "Approval Submission Detail Name",
+      "name": "Name",
+      "nillable": false,
+      "picklistValues": [],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "string"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": false,
+      "inlineHelpText": null,
+      "label": "Created Date",
+      "name": "CreatedDate",
+      "nillable": false,
+      "picklistValues": [],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "datetime"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Created By ID",
+      "name": "CreatedById",
+      "nillable": false,
+      "picklistValues": [],
+      "referenceTo": [
+        "User"
+      ],
+      "relationshipName": "CreatedBy",
+      "sortable": true,
+      "type": "reference"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": false,
+      "inlineHelpText": null,
+      "label": "Last Modified Date",
+      "name": "LastModifiedDate",
+      "nillable": false,
+      "picklistValues": [],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "datetime"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Last Modified By ID",
+      "name": "LastModifiedById",
+      "nillable": false,
+      "picklistValues": [],
+      "referenceTo": [
+        "User"
+      ],
+      "relationshipName": "LastModifiedBy",
+      "sortable": true,
+      "type": "reference"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": false,
+      "inlineHelpText": null,
+      "label": "System Modstamp",
+      "name": "SystemModstamp",
+      "nillable": false,
+      "picklistValues": [],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "datetime"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Approval Submission ID",
+      "name": "ApprovalSubmissionId",
+      "nillable": false,
+      "picklistValues": [],
+      "referenceTo": [
+        "ApprovalSubmission"
+      ],
+      "relationshipName": "ApprovalSubmission",
+      "sortable": true,
+      "type": "reference"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Approval Work Item ID",
+      "name": "ApprovalWorkItemId",
+      "nillable": true,
+      "picklistValues": [],
+      "referenceTo": [
+        "ApprovalWorkItem"
+      ],
+      "relationshipName": "ApprovalWorkItem",
+      "sortable": true,
+      "type": "reference"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Action Name",
+      "name": "ActionName",
+      "nillable": false,
+      "picklistValues": [
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Cancel",
+          "validFor": null,
+          "value": "Cancel"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Override",
+          "validFor": null,
+          "value": "Override"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Reassign",
+          "validFor": null,
+          "value": "Reassign"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Recall",
+          "validFor": null,
+          "value": "Recall"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Review",
+          "validFor": null,
+          "value": "Review"
+        }
+      ],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "picklist"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Action Context",
+      "name": "ActionContext",
+      "nillable": true,
+      "picklistValues": [],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "string"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "User ID",
+      "name": "ActionPerformedById",
+      "nillable": true,
+      "picklistValues": [],
+      "referenceTo": [
+        "User"
+      ],
+      "relationshipName": "ActionPerformedBy",
+      "sortable": true,
+      "type": "reference"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Action Performer Role",
+      "name": "ActionPerformerRole",
+      "nillable": false,
+      "picklistValues": [
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Admin",
+          "validFor": null,
+          "value": "Admin"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Assignee",
+          "validFor": null,
+          "value": "Assignee"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Delegate",
+          "validFor": null,
+          "value": "Delegate"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Submitter",
+          "validFor": null,
+          "value": "Submitter"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "System",
+          "validFor": null,
+          "value": "System"
+        }
+      ],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "picklist"
+    },
+    {
+      "aggregatable": false,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": "richtextarea",
+      "filterable": false,
+      "groupable": false,
+      "inlineHelpText": null,
+      "label": "Comments",
+      "name": "Comments",
+      "nillable": true,
+      "picklistValues": [],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": false,
+      "type": "textarea"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Action Channel Name",
+      "name": "ActionChannelName",
+      "nillable": false,
+      "picklistValues": [
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Invocable Action",
+          "validFor": null,
+          "value": "InvocableAction"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Screen Flow",
+          "validFor": null,
+          "value": "ScreenFlow"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "System",
+          "validFor": null,
+          "value": "System"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Email",
+          "validFor": null,
+          "value": "Email"
+        }
+      ],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "picklist"
+    }
+  ],
+  "label": "Approval Submission Detail",
+  "childRelationships": [
+    {
+      "cascadeDelete": true,
+      "childSObject": "AIInsightValue",
+      "deprecatedAndHidden": false,
+      "field": "SobjectLookupValueId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "AIRecordInsight",
+      "deprecatedAndHidden": false,
+      "field": "TargetId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ApprovalSubmission",
+      "deprecatedAndHidden": false,
+      "field": "RelatedRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ApprovalSubmissions",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ApprovalWorkItem",
+      "deprecatedAndHidden": false,
+      "field": "RelatedRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ApprovalWorkItems",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "FlowExecutionErrorEvent",
+      "deprecatedAndHidden": false,
+      "field": "ContextRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "FlowOrchestrationWorkItem",
+      "deprecatedAndHidden": false,
+      "field": "RelatedRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "FlowOrchestrationWorkItems",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "FlowRecordRelation",
+      "deprecatedAndHidden": false,
+      "field": "RelatedRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "PendingServiceRoutingInteractionInfo",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "ProcessInstance",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ProcessInstances",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ProcessInstanceChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ProcessInstanceHistory",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ProcessSteps",
+      "restrictedDelete": false
+    }
+  ],
+  "custom": false,
+  "name": "ApprovalSubmissionDetail",
+  "queryable": true
+}

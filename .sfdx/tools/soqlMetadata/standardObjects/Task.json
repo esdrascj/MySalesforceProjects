@@ -51,75 +51,71 @@
       "picklistValues": [],
       "referenceTo": [
         "Account",
-        "ApptBundleAggrDurDnscale",
-        "ApptBundleAggrPolicy",
-        "ApptBundleConfig",
-        "ApptBundlePolicy",
-        "ApptBundlePolicySvcTerr",
-        "ApptBundlePropagatePolicy",
-        "ApptBundleRestrictPolicy",
-        "ApptBundleSortPolicy",
+        "AppointmentCategory",
+        "AppointmentInvitation",
         "Asset",
         "AssetRelationship",
-        "AssetWarranty",
         "AssignedResource",
-        "AttributeDefinition",
-        "AttributePicklist",
-        "AttributePicklistValue",
         "Campaign",
         "Case",
+        "ChangeRequest",
+        "ChannelProgram",
+        "ChannelProgramLevel",
         "CommSubscriptionConsent",
         "ContactRequest",
         "Contract",
         "ContractLineItem",
+        "Coupon",
         "CreditMemo",
+        "DelegatedAccount",
+        "DeliveryEstimationSetup",
         "Entitlement",
-        "Expense",
-        "ExpenseReport",
-        "ExpenseReportEntry",
+        "FulfillmentOrder",
         "Image",
+        "Incident",
         "Invoice",
         "LegalEntity",
         "ListEmail",
         "Location",
-        "MaintenanceAsset",
-        "MaintenancePlan",
+        "LocationShippingCarrierMethod",
         "OperatingHoursHoliday",
         "Opportunity",
         "Order",
+        "PartnerFundAllocation",
+        "PartnerFundClaim",
+        "PartnerFundRequest",
+        "PartnerMarketingBudget",
         "PartyConsent",
+        "PrivacyRTBFRequest",
+        "Problem",
         "ProcessException",
         "Product2",
-        "ProductConsumed",
-        "ProductItem",
-        "ProductRequest",
-        "ProductRequestLineItem",
-        "ProductServiceCampaign",
-        "ProductServiceCampaignItem",
-        "ProductTransfer",
-        "Property__c",
+        "ProductCatalog",
+        "Promotion",
+        "PromotionMarketSegment",
+        "PromotionQualifier",
+        "PromotionSegment",
+        "PromotionSegmentBuyerGroup",
+        "PromotionSegmentSalesStore",
+        "PromotionTarget",
+        "PromotionTier",
         "ResourceAbsence",
         "ReturnOrder",
         "ReturnOrderLineItem",
         "ServiceAppointment",
         "ServiceContract",
-        "ServiceCrew",
-        "ServiceCrewMember",
         "ServiceResource",
         "Shift",
-        "ShiftPattern",
-        "ShiftPatternEntry",
         "Shipment",
         "ShipmentItem",
+        "ShippingCarrier",
+        "ShippingCarrierMethod",
         "Solution",
-        "TimeSheet",
-        "TimeSheetEntry",
-        "TravelMode",
-        "WarrantyTerm",
+        "Waitlist",
+        "WaitlistParticipant",
         "WorkOrder",
         "WorkOrderLineItem",
         "WorkPlan",
-        "WorkPlanSelectionRule",
         "WorkPlanTemplate",
         "WorkPlanTemplateEntry",
         "WorkStep",
@@ -294,7 +290,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -348,7 +344,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -384,7 +380,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -490,7 +486,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -614,7 +610,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -650,7 +646,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -720,30 +716,9 @@
         {
           "active": true,
           "defaultValue": false,
-          "label": "(GMT+13:45) Chatham Daylight Time (Pacific/Chatham)",
-          "validFor": null,
-          "value": "Pacific/Chatham"
-        },
-        {
-          "active": true,
-          "defaultValue": false,
-          "label": "(GMT+13:00) New Zealand Daylight Time (Antarctica/McMurdo)",
-          "validFor": null,
-          "value": "Antarctica/McMurdo"
-        },
-        {
-          "active": true,
-          "defaultValue": false,
           "label": "(GMT+13:00) Apia Standard Time (Pacific/Apia)",
           "validFor": null,
           "value": "Pacific/Apia"
-        },
-        {
-          "active": true,
-          "defaultValue": false,
-          "label": "(GMT+13:00) New Zealand Daylight Time (Pacific/Auckland)",
-          "validFor": null,
-          "value": "Pacific/Auckland"
         },
         {
           "active": true,
@@ -769,6 +744,20 @@
         {
           "active": true,
           "defaultValue": false,
+          "label": "(GMT+12:45) Chatham Standard Time (Pacific/Chatham)",
+          "validFor": null,
+          "value": "Pacific/Chatham"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "(GMT+12:00) New Zealand Standard Time (Antarctica/McMurdo)",
+          "validFor": null,
+          "value": "Antarctica/McMurdo"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
           "label": "(GMT+12:00) Anadyr Standard Time (Asia/Anadyr)",
           "validFor": null,
           "value": "Asia/Anadyr"
@@ -779,6 +768,13 @@
           "label": "(GMT+12:00) Petropavlovsk-Kamchatski Standard Time (Asia/Kamchatka)",
           "validFor": null,
           "value": "Asia/Kamchatka"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "(GMT+12:00) New Zealand Standard Time (Pacific/Auckland)",
+          "validFor": null,
+          "value": "Pacific/Auckland"
         },
         {
           "active": true,
@@ -835,13 +831,6 @@
           "label": "(GMT+12:00) Wallis & Futuna Time (Pacific/Wallis)",
           "validFor": null,
           "value": "Pacific/Wallis"
-        },
-        {
-          "active": true,
-          "defaultValue": false,
-          "label": "(GMT+11:00) Casey Time (Antarctica/Casey)",
-          "validFor": null,
-          "value": "Antarctica/Casey"
         },
         {
           "active": true,
@@ -1105,6 +1094,13 @@
         {
           "active": true,
           "defaultValue": false,
+          "label": "(GMT+08:00) Casey Time (Antarctica/Casey)",
+          "validFor": null,
+          "value": "Antarctica/Casey"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
           "label": "(GMT+08:00) Brunei Darussalam Time (Asia/Brunei)",
           "validFor": null,
           "value": "Asia/Brunei"
@@ -1315,20 +1311,6 @@
         {
           "active": true,
           "defaultValue": false,
-          "label": "(GMT+06:00) Vostok Time (Antarctica/Vostok)",
-          "validFor": null,
-          "value": "Antarctica/Vostok"
-        },
-        {
-          "active": true,
-          "defaultValue": false,
-          "label": "(GMT+06:00) East Kazakhstan Time (Asia/Almaty)",
-          "validFor": null,
-          "value": "Asia/Almaty"
-        },
-        {
-          "active": true,
-          "defaultValue": false,
           "label": "(GMT+06:00) Kyrgyzstan Time (Asia/Bishkek)",
           "validFor": null,
           "value": "Asia/Bishkek"
@@ -1346,13 +1328,6 @@
           "label": "(GMT+06:00) Omsk Standard Time (Asia/Omsk)",
           "validFor": null,
           "value": "Asia/Omsk"
-        },
-        {
-          "active": true,
-          "defaultValue": false,
-          "label": "(GMT+06:00) East Kazakhstan Time (Asia/Qostanay)",
-          "validFor": null,
-          "value": "Asia/Qostanay"
         },
         {
           "active": true,
@@ -1406,6 +1381,20 @@
         {
           "active": true,
           "defaultValue": false,
+          "label": "(GMT+05:00) Vostok Time (Antarctica/Vostok)",
+          "validFor": null,
+          "value": "Antarctica/Vostok"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "(GMT+05:00) East Kazakhstan Time (Asia/Almaty)",
+          "validFor": null,
+          "value": "Asia/Almaty"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
           "label": "(GMT+05:00) West Kazakhstan Time (Asia/Aqtau)",
           "validFor": null,
           "value": "Asia/Aqtau"
@@ -1451,6 +1440,13 @@
           "label": "(GMT+05:00) West Kazakhstan Time (Asia/Oral)",
           "validFor": null,
           "value": "Asia/Oral"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "(GMT+05:00) East Kazakhstan Time (Asia/Qostanay)",
+          "validFor": null,
+          "value": "Asia/Qostanay"
         },
         {
           "active": true,
@@ -1927,6 +1923,13 @@
           "label": "(GMT+02:00) Central Africa Time (Africa/Juba)",
           "validFor": null,
           "value": "Africa/Juba"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "(GMT+02:00) Central Africa Time (Africa/Khartoum)",
+          "validFor": null,
+          "value": "Africa/Khartoum"
         },
         {
           "active": true,
@@ -2491,13 +2494,6 @@
         {
           "active": true,
           "defaultValue": false,
-          "label": "(GMT+00:00) East Greenland Summer Time (America/Scoresbysund)",
-          "validFor": null,
-          "value": "America/Scoresbysund"
-        },
-        {
-          "active": true,
-          "defaultValue": false,
           "label": "(GMT+00:00) Azores Summer Time (Atlantic/Azores)",
           "validFor": null,
           "value": "Atlantic/Azores"
@@ -2526,16 +2522,23 @@
         {
           "active": true,
           "defaultValue": false,
-          "label": "(GMT-01:00) Cape Verde Standard Time (Atlantic/Cape_Verde)",
+          "label": "(GMT-01:00) West Greenland Summer Time (America/Godthab)",
           "validFor": null,
-          "value": "Atlantic/Cape_Verde"
+          "value": "America/Godthab"
         },
         {
           "active": true,
           "defaultValue": false,
-          "label": "(GMT-02:00) West Greenland Summer Time (America/Godthab)",
+          "label": "(GMT-01:00) East Greenland Summer Time (America/Scoresbysund)",
           "validFor": null,
-          "value": "America/Godthab"
+          "value": "America/Scoresbysund"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "(GMT-01:00) Cape Verde Standard Time (Atlantic/Cape_Verde)",
+          "validFor": null,
+          "value": "Atlantic/Cape_Verde"
         },
         {
           "active": true,
@@ -2627,6 +2630,13 @@
           "label": "(GMT-03:00) Argentina Standard Time (America/Argentina/Ushuaia)",
           "validFor": null,
           "value": "America/Argentina/Ushuaia"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "(GMT-03:00) Paraguay Standard Time (America/Asuncion)",
+          "validFor": null,
+          "value": "America/Asuncion"
         },
         {
           "active": true,
@@ -2823,13 +2833,6 @@
           "label": "(GMT-04:00) Atlantic Standard Time (America/Aruba)",
           "validFor": null,
           "value": "America/Aruba"
-        },
-        {
-          "active": true,
-          "defaultValue": false,
-          "label": "(GMT-04:00) Paraguay Standard Time (America/Asuncion)",
-          "validFor": null,
-          "value": "America/Asuncion"
         },
         {
           "active": true,
@@ -4080,7 +4083,7 @@
       "restrictedDelete": false
     },
     {
-      "cascadeDelete": true,
+      "cascadeDelete": false,
       "childSObject": "AIRecordInsight",
       "deprecatedAndHidden": false,
       "field": "TargetId",
@@ -4251,6 +4254,36 @@
     },
     {
       "cascadeDelete": false,
+      "childSObject": "NetworkActivityAudit",
+      "deprecatedAndHidden": false,
+      "field": "ParentEntityId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ParentEntities",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "NetworkFeedResponseMetric",
+      "deprecatedAndHidden": false,
+      "field": "ParentRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "NetworkUserHistoryRecent",
+      "deprecatedAndHidden": false,
+      "field": "RecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "NetworkUserHistoryRecentToRecord",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
       "childSObject": "Task",
       "deprecatedAndHidden": false,
       "field": "RecurrenceActivityId",
@@ -4287,6 +4320,36 @@
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": "TopicAssignments",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "UserDefinedLabelAssignment",
+      "deprecatedAndHidden": false,
+      "field": "ItemId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "UserDefinedLabelAssignments",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "VoiceCall",
+      "deprecatedAndHidden": false,
+      "field": "ActivityId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "VoiceCallActivities",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "VoiceCallChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "ActivityId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
       "restrictedDelete": false
     }
   ],
