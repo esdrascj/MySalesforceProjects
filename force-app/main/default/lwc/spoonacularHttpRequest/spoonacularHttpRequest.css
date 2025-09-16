@@ -1,0 +1,38 @@
+.food-card {
+    padding: 10px 20px;
+    background-color: #e9ddff;
+    border: 1px solid #c8c8c8;
+    margin: 10px;
+    width: 20rem;
+    border-radius: 1rem;
+}
+
+.preview-icon {
+    background-color: #d0bcfe;
+    border-radius: 30%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    align-content: center;
+    text-align: center;
+    --slds-c-icon-color-foreground-default: #3e3e3e;
+    transition: 1s all;
+}
+
+.preview-icon:hover {
+    background-color: #4f378a;
+    border-radius: 100%;
+    transform: rotateZ(90deg);
+    --slds-c-icon-color-foreground-default: #ffffff;
+    transition: 1s all;
+}
+
+.image-hold {
+    transform: rotateZ(0deg);
+    transition: 1s all;
+}
+
+.preview-icon:hover > .image-hold {
+    transform: rotateZ(-90deg);
+    transition: 1s all;
+}

@@ -20,7 +20,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -177,7 +177,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -194,7 +194,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -228,7 +228,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -256,30 +256,10 @@
       "restrictedDelete": false
     },
     {
-      "cascadeDelete": true,
+      "cascadeDelete": false,
       "childSObject": "AIRecordInsight",
       "deprecatedAndHidden": false,
       "field": "TargetId",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": null,
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "AssetWarranty",
-      "deprecatedAndHidden": false,
-      "field": "Pricebook2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": "AssetWarrantyPricebooks",
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "AssetWarrantyChangeEvent",
-      "deprecatedAndHidden": false,
-      "field": "Pricebook2Id",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": null,
@@ -367,6 +347,16 @@
     },
     {
       "cascadeDelete": true,
+      "childSObject": "PendingServiceRoutingInteractionInfo",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
       "childSObject": "Pricebook2History",
       "deprecatedAndHidden": false,
       "field": "Pricebook2Id",
@@ -437,23 +427,53 @@
     },
     {
       "cascadeDelete": false,
-      "childSObject": "WarrantyTerm",
+      "childSObject": "WebStore",
       "deprecatedAndHidden": false,
-      "field": "Pricebook2Id",
+      "field": "SortByPricebookId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
-      "relationshipName": "Pricebook2",
-      "restrictedDelete": false
+      "relationshipName": null,
+      "restrictedDelete": true
     },
     {
       "cascadeDelete": false,
-      "childSObject": "WarrantyTermChangeEvent",
+      "childSObject": "WebStore",
       "deprecatedAndHidden": false,
-      "field": "Pricebook2Id",
+      "field": "StrikethroughPricebookId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": true
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "WebStoreChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "SortByPricebookId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": null,
       "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "WebStoreChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "StrikethroughPricebookId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "WebStoreConfig",
+      "deprecatedAndHidden": false,
+      "field": "StrikethroughPricebookId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": true
     },
     {
       "cascadeDelete": false,

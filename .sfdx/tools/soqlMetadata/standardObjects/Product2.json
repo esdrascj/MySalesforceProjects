@@ -71,7 +71,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -200,23 +200,6 @@
       "type": "picklist"
     },
     {
-      "aggregatable": false,
-      "custom": false,
-      "defaultValue": null,
-      "extraTypeInfo": null,
-      "filterable": true,
-      "groupable": true,
-      "inlineHelpText": null,
-      "label": "Serialized",
-      "name": "IsSerialized",
-      "nillable": false,
-      "picklistValues": [],
-      "referenceTo": [],
-      "relationshipName": null,
-      "sortable": true,
-      "type": "boolean"
-    },
-    {
       "aggregatable": true,
       "custom": false,
       "defaultValue": null,
@@ -297,7 +280,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -314,7 +297,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -378,6 +361,98 @@
       "relationshipName": null,
       "sortable": true,
       "type": "string"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": null,
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Product Type",
+      "name": "Type",
+      "nillable": true,
+      "picklistValues": [
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Base",
+          "validFor": null,
+          "value": "Base"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Bundle",
+          "validFor": null,
+          "value": "Bundle"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Set",
+          "validFor": null,
+          "value": "Set"
+        }
+      ],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "picklist"
+    },
+    {
+      "aggregatable": true,
+      "custom": false,
+      "defaultValue": "Simple",
+      "extraTypeInfo": null,
+      "filterable": true,
+      "groupable": true,
+      "inlineHelpText": null,
+      "label": "Product Class",
+      "name": "ProductClass",
+      "nillable": false,
+      "picklistValues": [
+        {
+          "active": true,
+          "defaultValue": true,
+          "label": "Simple",
+          "validFor": null,
+          "value": "Simple"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Variation Parent",
+          "validFor": null,
+          "value": "VariationParent"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Variation",
+          "validFor": null,
+          "value": "Variation"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Bundle",
+          "validFor": null,
+          "value": "Bundle"
+        },
+        {
+          "active": true,
+          "defaultValue": false,
+          "label": "Set",
+          "validFor": null,
+          "value": "Set"
+        }
+      ],
+      "referenceTo": [],
+      "relationshipName": null,
+      "sortable": true,
+      "type": "picklist"
     }
   ],
   "label": "Product",
@@ -393,7 +468,7 @@
       "restrictedDelete": false
     },
     {
-      "cascadeDelete": true,
+      "cascadeDelete": false,
       "childSObject": "AIRecordInsight",
       "deprecatedAndHidden": false,
       "field": "TargetId",
@@ -410,6 +485,26 @@
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": "ActivityHistories",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ApprovalSubmission",
+      "deprecatedAndHidden": false,
+      "field": "RelatedRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ApprovalSubmissions",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ApprovalWorkItem",
+      "deprecatedAndHidden": false,
+      "field": "RelatedRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ApprovalWorkItems",
       "restrictedDelete": false
     },
     {
@@ -450,6 +545,36 @@
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": "Attachments",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "CartDeliveryGroupMethod",
+      "deprecatedAndHidden": false,
+      "field": "ProductId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "CartDeliveryGroupMethods",
+      "restrictedDelete": true
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "CartItem",
+      "deprecatedAndHidden": false,
+      "field": "Product2Id",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "CartItemChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "Product2Id",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
       "restrictedDelete": false
     },
     {
@@ -619,7 +744,7 @@
       "field": "RelatedRecordId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
-      "relationshipName": null,
+      "relationshipName": "FlowOrchestrationWorkItems",
       "restrictedDelete": false
     },
     {
@@ -634,6 +759,56 @@
     },
     {
       "cascadeDelete": false,
+      "childSObject": "FulfillmentOrderLineItem",
+      "deprecatedAndHidden": false,
+      "field": "Product2Id",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "FulfillmentOrderLineItems",
+      "restrictedDelete": true
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "FulfillmentOrderLineItemChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "Product2Id",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "IncidentRelatedItem",
+      "deprecatedAndHidden": false,
+      "field": "Product2Id",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "IncidentRelatedItems",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "IncidentRelatedItemChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "Product2Id",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "InventoryItemReservation",
+      "deprecatedAndHidden": false,
+      "field": "ProductId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "InventoryProducts",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
       "childSObject": "InvoiceLine",
       "deprecatedAndHidden": false,
       "field": "Product2Id",
@@ -641,6 +816,56 @@
       "junctionReferenceTo": [],
       "relationshipName": "InvoiceLines",
       "restrictedDelete": true
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ListEmail",
+      "deprecatedAndHidden": false,
+      "field": "RelatedToId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ListEmails",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ListEmailChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "RelatedToId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "NetworkActivityAudit",
+      "deprecatedAndHidden": false,
+      "field": "ParentEntityId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ParentEntities",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "NetworkFeedResponseMetric",
+      "deprecatedAndHidden": false,
+      "field": "ParentRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "NetworkUserHistoryRecent",
+      "deprecatedAndHidden": false,
+      "field": "RecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "NetworkUserHistoryRecentToRecord",
+      "restrictedDelete": false
     },
     {
       "cascadeDelete": true,
@@ -664,6 +889,36 @@
     },
     {
       "cascadeDelete": true,
+      "childSObject": "ObjectMetadataTag",
+      "deprecatedAndHidden": false,
+      "field": "RecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "ObjectRelatedUrl",
+      "deprecatedAndHidden": false,
+      "field": "ParentId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ObjectRelatedUrlChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "ParentId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
       "childSObject": "OpenActivity",
       "deprecatedAndHidden": false,
       "field": "WhatId",
@@ -675,6 +930,16 @@
     {
       "cascadeDelete": false,
       "childSObject": "OpportunityLineItem",
+      "deprecatedAndHidden": false,
+      "field": "Product2Id",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "OpportunityLineItemChangeEvent",
       "deprecatedAndHidden": false,
       "field": "Product2Id",
       "junctionIdListNames": [],
@@ -714,6 +979,16 @@
     },
     {
       "cascadeDelete": true,
+      "childSObject": "PendingServiceRoutingInteractionInfo",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
       "childSObject": "PricebookEntry",
       "deprecatedAndHidden": false,
       "field": "Product2Id",
@@ -740,6 +1015,16 @@
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": "ProcessInstances",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ProcessInstanceChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
       "restrictedDelete": false
     },
     {
@@ -773,13 +1058,73 @@
       "restrictedDelete": false
     },
     {
-      "cascadeDelete": false,
-      "childSObject": "ProductConsumed",
+      "cascadeDelete": true,
+      "childSObject": "ProductAttribute",
       "deprecatedAndHidden": false,
-      "field": "Product2Id",
+      "field": "ProductId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
-      "relationshipName": "ProductsConsumed",
+      "relationshipName": "ProductAttributes",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ProductAttribute",
+      "deprecatedAndHidden": false,
+      "field": "VariantParentId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ProductVariantAttributes",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ProductAttributeChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "ProductId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ProductAttributeChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "VariantParentId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "ProductAttributeSetProduct",
+      "deprecatedAndHidden": false,
+      "field": "ProductId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ProductAttributeSetProducts",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ProductCategoryProduct",
+      "deprecatedAndHidden": false,
+      "field": "ProductId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ProductCategoryProducts",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "ProductCategoryProductChangeEvent",
+      "deprecatedAndHidden": false,
+      "field": "ProductId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
       "restrictedDelete": false
     },
     {
@@ -804,19 +1149,19 @@
     },
     {
       "cascadeDelete": true,
-      "childSObject": "ProductItem",
+      "childSObject": "PromotionLineItemRule",
       "deprecatedAndHidden": false,
-      "field": "Product2Id",
+      "field": "TypeReferenceId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
-      "relationshipName": "ProductItems",
+      "relationshipName": "PromotionLineItemRules",
       "restrictedDelete": false
     },
     {
-      "cascadeDelete": false,
-      "childSObject": "ProductItemChangeEvent",
+      "cascadeDelete": true,
+      "childSObject": "PromotionQualifier",
       "deprecatedAndHidden": false,
-      "field": "Product2Id",
+      "field": "QualifierId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": null,
@@ -824,92 +1169,12 @@
     },
     {
       "cascadeDelete": true,
-      "childSObject": "ProductRequestLineItem",
+      "childSObject": "PromotionTarget",
       "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": "ProductRequestLineItems",
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "ProductRequestLineItemChangeEvent",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
+      "field": "TargetId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": null,
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": true,
-      "childSObject": "ProductRequired",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": "ProductsRequired",
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "ProductRequiredChangeEvent",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": null,
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "ProductServiceCampaign",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": "ProductServiceCampaignProducts",
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "ProductServiceCampaignItem",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": "ProductServiceCampaignItems",
-      "restrictedDelete": true
-    },
-    {
-      "cascadeDelete": true,
-      "childSObject": "ProductTransfer",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": "ProductTransfers",
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "ProductTransferChangeEvent",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": null,
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "ProductWarrantyTerm",
-      "deprecatedAndHidden": false,
-      "field": "CoveredProductId",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": "ProductWarrantyTermProducts",
       "restrictedDelete": false
     },
     {
@@ -950,16 +1215,6 @@
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": null,
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": true,
-      "childSObject": "SerializedProduct",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": "SerializedProducts",
       "restrictedDelete": false
     },
     {
@@ -1005,26 +1260,6 @@
     {
       "cascadeDelete": false,
       "childSObject": "WorkOrderLineItemChangeEvent",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": null,
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "WorkPlanSelectionRule",
-      "deprecatedAndHidden": false,
-      "field": "Product2Id",
-      "junctionIdListNames": [],
-      "junctionReferenceTo": [],
-      "relationshipName": "WorkPlanSelectionRules",
-      "restrictedDelete": false
-    },
-    {
-      "cascadeDelete": false,
-      "childSObject": "WorkPlanSelectionRuleChangeEvent",
       "deprecatedAndHidden": false,
       "field": "Product2Id",
       "junctionIdListNames": [],

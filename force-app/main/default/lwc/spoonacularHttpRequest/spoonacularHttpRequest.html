@@ -1,0 +1,90 @@
+<template>
+    <div style="background-color: #ffffff; padding: 0.5rem;">
+        <lightning-input label="Food" onchange={handleFoodType}></lightning-input>
+        <lightning-input type="number" label="Response Size" onchange={handleResponseSizeChange} value={responseSize}></lightning-input>
+        <lightning-button label="Make Callout" variant="brand" onclick={spoonacularFetch}></lightning-button>
+
+        <div class="slds-grid slds-wrap" style="align-items: stretch;">
+            <template for:each={foodData} for:item="foodInfo">
+                <div key={foodInfo.id} class="food-card">
+                    <div class="slds-grid">
+                        <div class="slds-size_10-of-12">
+                            <p style="font-size: 20px;"><strong>{foodInfo.title}</strong></p>
+                        </div>
+                        <div class="slds-size_2-of-12" style="justify-items: right;">
+                            <div class="preview-icon" onclick={showFoodData} data-value={foodInfo.id}
+                                data-name={foodInfo.title}>
+                                <lightning-icon icon-name="utility:preview" alternative-text="preview"
+                                    title="View Details" size="x-small" class="image-hold" data-value={foodInfo.id}
+                                    data-name={foodInfo.title}></lightning-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <img src={foodInfo.image} alt={foodInfo.title}
+                        style="max-width: 200px; display: block; margin-bottom: 10px;" />
+
+                    <template if:true={foodInfo.nutrition}>
+                        <template for:each={foodInfo.nutrition.nutrients} for:item="nutrient">
+                            <p key={nutrient.name} style="font-size: 15px;">
+                                {nutrient.name}: {nutrient.amount} {nutrient.unit}
+                            </p>
+                        </template>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <template if:true={isShowModal}>
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container adjust-width">
+                <header class="slds-modal__header modern-color">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={hideModalBox}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" style="color: #1e2443; font-weight: 600;"
+                        class="slds-text-heading_medium slds-hyphenate">{selectedFoodName}
+                    </h2>
+                </header>
+
+                <div id="modal-content-id-1"
+                    style="background-color: white; padding: 1.5rem 2rem; max-height: 70%; overflow: auto;">
+                    <template for:each={foodInfoFull} for:item="foodInfo">
+                        <div key={foodInfo.id}>
+
+                            <p><strong>Summary:</strong> <lightning-formatted-rich-text
+                                    value={foodInfo.summary}></lightning-formatted-rich-text></p>
+                            <p><strong>Instructions:</strong> <lightning-formatted-rich-text
+                                    value={foodInfo.instructions}></lightning-formatted-rich-text></p>
+                            <p><strong>Ready In Minutes:</strong> {foodInfo.readyInMinutes} minutes</p>
+                            <p><strong>Servings:</strong> {foodInfo.servings}</p>
+                            <p><strong>Vegetarian:</strong> <span if:true={foodInfo.vegetarian}> Yes</span> <span
+                                    if:false={foodInfo.vegetarian}> No</span></p>
+                            <p><strong>Vegan:</strong> <span if:true={foodInfo.vegan}> Yes</span> <span
+                                    if:false={foodInfo.vegan}> No</span></p>
+                            <p><strong>Gluten Free:</strong> <span if:true={foodInfo.glutenFree}> Yes</span> <span
+                                    if:false={foodInfo.glutenFree}> No</span></p>
+                            <p><strong>Dairy Free:</strong> <span if:true={foodInfo.dairyFree}> Yes</span> <span
+                                    if:false={foodInfo.dairyFree}> No</span></p>
+                            <p><strong>Cheap:</strong> <span if:true={foodInfo.cheap}> Yes</span> <span
+                                    if:false={foodInfo.cheap}> No</span></p>
+                        </div>
+                    </template>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button onclick={hideModalBox} class="btn-theme-brand" label="Close"></lightning-button>
+                </footer>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <lightning-spinner alternative-text="Loading" size="medium" style="position: fixed;"
+        if:true={isLoading}></lightning-spinner>
+</template>

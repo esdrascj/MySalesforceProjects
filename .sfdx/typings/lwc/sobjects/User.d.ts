@@ -178,6 +178,14 @@ declare module "@salesforce/schema/User.UserType" {
   const UserType:string;
   export default UserType;
 }
+declare module "@salesforce/schema/User.StartDay" {
+  const StartDay:string;
+  export default StartDay;
+}
+declare module "@salesforce/schema/User.EndDay" {
+  const EndDay:string;
+  export default EndDay;
+}
 declare module "@salesforce/schema/User.LanguageLocaleKey" {
   const LanguageLocaleKey:string;
   export default LanguageLocaleKey;
@@ -238,9 +246,17 @@ declare module "@salesforce/schema/User.SystemModstamp" {
   const SystemModstamp:any;
   export default SystemModstamp;
 }
+declare module "@salesforce/schema/User.PasswordExpirationDate" {
+  const PasswordExpirationDate:any;
+  export default PasswordExpirationDate;
+}
 declare module "@salesforce/schema/User.NumberOfFailedLogins" {
   const NumberOfFailedLogins:number;
   export default NumberOfFailedLogins;
+}
+declare module "@salesforce/schema/User.SuAccessExpirationDate" {
+  const SuAccessExpirationDate:any;
+  export default SuAccessExpirationDate;
 }
 declare module "@salesforce/schema/User.OfflineTrialExpirationDate" {
   const OfflineTrialExpirationDate:any;
@@ -410,6 +426,14 @@ declare module "@salesforce/schema/User.UserPreferencesDisableSharePostEmail" {
   const UserPreferencesDisableSharePostEmail:boolean;
   export default UserPreferencesDisableSharePostEmail;
 }
+declare module "@salesforce/schema/User.UserPreferencesActionLauncherEinsteinGptConsent" {
+  const UserPreferencesActionLauncherEinsteinGptConsent:boolean;
+  export default UserPreferencesActionLauncherEinsteinGptConsent;
+}
+declare module "@salesforce/schema/User.UserPreferencesAssistiveActionsEnabledInActionLauncher" {
+  const UserPreferencesAssistiveActionsEnabledInActionLauncher:boolean;
+  export default UserPreferencesAssistiveActionsEnabledInActionLauncher;
+}
 declare module "@salesforce/schema/User.UserPreferencesEnableAutoSubForFeeds" {
   const UserPreferencesEnableAutoSubForFeeds:boolean;
   export default UserPreferencesEnableAutoSubForFeeds;
@@ -486,17 +510,13 @@ declare module "@salesforce/schema/User.UserPreferencesShowCountryToGuestUsers" 
   const UserPreferencesShowCountryToGuestUsers:boolean;
   export default UserPreferencesShowCountryToGuestUsers;
 }
-declare module "@salesforce/schema/User.UserPreferencesDisableFeedbackEmail" {
-  const UserPreferencesDisableFeedbackEmail:boolean;
-  export default UserPreferencesDisableFeedbackEmail;
-}
-declare module "@salesforce/schema/User.UserPreferencesDisableWorkEmail" {
-  const UserPreferencesDisableWorkEmail:boolean;
-  export default UserPreferencesDisableWorkEmail;
-}
 declare module "@salesforce/schema/User.UserPreferencesShowForecastingChangeSignals" {
   const UserPreferencesShowForecastingChangeSignals:boolean;
   export default UserPreferencesShowForecastingChangeSignals;
+}
+declare module "@salesforce/schema/User.UserPreferencesLiveAgentMiawSetupDeflection" {
+  const UserPreferencesLiveAgentMiawSetupDeflection:boolean;
+  export default UserPreferencesLiveAgentMiawSetupDeflection;
 }
 declare module "@salesforce/schema/User.UserPreferencesHideS1BrowserUI" {
   const UserPreferencesHideS1BrowserUI:boolean;
@@ -646,9 +666,13 @@ declare module "@salesforce/schema/User.UserPreferencesNativeEmailClient" {
   const UserPreferencesNativeEmailClient:boolean;
   export default UserPreferencesNativeEmailClient;
 }
-declare module "@salesforce/schema/User.UserPreferencesSendListEmailThroughExternalService" {
-  const UserPreferencesSendListEmailThroughExternalService:boolean;
-  export default UserPreferencesSendListEmailThroughExternalService;
+declare module "@salesforce/schema/User.UserPreferencesShowForecastingRoundedAmounts" {
+  const UserPreferencesShowForecastingRoundedAmounts:boolean;
+  export default UserPreferencesShowForecastingRoundedAmounts;
+}
+declare module "@salesforce/schema/User.IsPartner" {
+  const IsPartner:boolean;
+  export default IsPartner;
 }
 declare module "@salesforce/schema/User.Contact" {
   const Contact:any;
@@ -677,6 +701,14 @@ declare module "@salesforce/schema/User.CallCenterId" {
 declare module "@salesforce/schema/User.Extension" {
   const Extension:string;
   export default Extension;
+}
+declare module "@salesforce/schema/User.PortalRole" {
+  const PortalRole:string;
+  export default PortalRole;
+}
+declare module "@salesforce/schema/User.IsPortalEnabled" {
+  const IsPortalEnabled:boolean;
+  export default IsPortalEnabled;
 }
 declare module "@salesforce/schema/User.FederationIdentifier" {
   const FederationIdentifier:string;

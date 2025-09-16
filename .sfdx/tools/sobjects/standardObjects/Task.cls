@@ -59,9 +59,13 @@ global class Task {
     global List<CombinedAttachment> CombinedAttachments;
     global List<ContentDocumentLink> ContentDocumentLinks;
     global List<EntitySubscription> FeedSubscriptionsForEntity;
+    global List<NetworkActivityAudit> ParentEntities;
+    global List<NetworkUserHistoryRecent> NetworkUserHistoryRecentToRecord;
     global List<Task> RecurringTasks;
     global List<TaskFeed> Feeds;
     global List<TopicAssignment> TopicAssignments;
+    global List<UserDefinedLabelAssignment> UserDefinedLabelAssignments;
+    global List<VoiceCall> VoiceCallActivities;
     global List<AIInsightValue> SobjectLookupValue;
     global List<AIRecordInsight> Target;
     global List<ContentDocumentLinkChangeEvent> LinkedEntity;
@@ -71,7 +75,9 @@ global class Task {
     global List<FeedComment> Parent;
     global List<FlowExecutionErrorEvent> ContextRecord;
     global List<FlowRecordRelation> RelatedRecord;
+    global List<NetworkFeedResponseMetric> ParentRecord;
     global List<TaskChangeEvent> RecurrenceActivity;
+    global List<VoiceCallChangeEvent> Activity;
 
     global Task () 
     {

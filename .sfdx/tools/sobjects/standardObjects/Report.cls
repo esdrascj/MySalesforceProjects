@@ -31,6 +31,7 @@ global class Report {
     global List<CombinedAttachment> CombinedAttachments;
     global List<ContentDocumentLink> ContentDocumentLinks;
     global List<EntitySubscription> FeedSubscriptionsForEntity;
+    global List<NetworkActivityAudit> ParentEntities;
     global List<ReportFeed> Feeds;
     global List<ScorecardMetric> ScorecardMetrics;
     global List<ContentDocumentLinkChangeEvent> LinkedEntity;
@@ -39,6 +40,8 @@ global class Report {
     global List<FeedComment> Parent;
     global List<FlowExecutionErrorEvent> ContextRecord;
     global List<FlowRecordRelation> RelatedRecord;
+    global List<NetworkFeedResponseMetric> ParentRecord;
+    global List<PendingServiceRoutingInteractionInfo> TargetObject;
     global List<ReportEvent> Report;
 
     global Report () 

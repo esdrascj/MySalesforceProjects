@@ -55,6 +55,9 @@ global class Contract {
     global Datetime LastViewedDate;
     global Datetime LastReferencedDate;
     global List<ActivityHistory> ActivityHistories;
+    global List<AppUsageAssignment> AppUsageAssignments;
+    global List<ApprovalSubmission> ApprovalSubmissions;
+    global List<ApprovalWorkItem> ApprovalWorkItems;
     global List<AttachedContentDocument> AttachedContentDocuments;
     global List<Attachment> Attachments;
     global List<CollaborationGroupRecord> RecordAssociatedGroups;
@@ -66,6 +69,9 @@ global class Contract {
     global List<EmailMessage> Emails;
     global List<EntitySubscription> FeedSubscriptionsForEntity;
     global List<Event> Events;
+    global List<FlowOrchestrationWorkItem> FlowOrchestrationWorkItems;
+    global List<NetworkActivityAudit> ParentEntities;
+    global List<NetworkUserHistoryRecent> NetworkUserHistoryRecentToRecord;
     global List<Note> Notes;
     global List<NoteAndAttachment> NotesAndAttachments;
     global List<OpenActivity> OpenActivities;
@@ -78,6 +84,7 @@ global class Contract {
     global List<TopicAssignment> TopicAssignments;
     global List<AIInsightValue> SobjectLookupValue;
     global List<AIRecordInsight> Target;
+    global List<CollaborationGroupRecordChangeEvent> Record;
     global List<ContentDocumentLinkChangeEvent> LinkedEntity;
     global List<ContentVersion> FirstPublishLocation;
     global List<EmailMessageChangeEvent> RelatedTo;
@@ -85,9 +92,11 @@ global class Contract {
     global List<EventRelationChangeEvent> Relation;
     global List<FeedComment> Parent;
     global List<FlowExecutionErrorEvent> ContextRecord;
-    global List<FlowOrchestrationWorkItem> RelatedRecord;
+    global List<FlowRecordRelation> RelatedRecord;
+    global List<NetworkFeedResponseMetric> ParentRecord;
     global List<OrderChangeEvent> Contract;
     global List<OutgoingEmail> RelatedTo;
+    global List<PendingServiceRoutingInteractionInfo> TargetObject;
     global List<TaskChangeEvent> What;
 
     global Contract () 
