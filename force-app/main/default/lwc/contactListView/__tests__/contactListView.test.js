@@ -1,4 +1,3 @@
-import { createElement } from 'lwc';
 import ContactListView from 'c/contactListView';
 
 describe('c-contact-list-view', () => {
