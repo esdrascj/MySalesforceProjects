@@ -130,7 +130,7 @@
     {
       "aggregatable": false,
       "custom": false,
-      "defaultValue": null,
+      "defaultValue": false,
       "extraTypeInfo": null,
       "filterable": true,
       "groupable": true,
@@ -444,6 +444,36 @@
       "childSObject": "FlowRecordRelation",
       "deprecatedAndHidden": false,
       "field": "RelatedRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "NetworkActivityAudit",
+      "deprecatedAndHidden": false,
+      "field": "ParentEntityId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": "ParentEntities",
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": false,
+      "childSObject": "NetworkFeedResponseMetric",
+      "deprecatedAndHidden": false,
+      "field": "ParentRecordId",
+      "junctionIdListNames": [],
+      "junctionReferenceTo": [],
+      "relationshipName": null,
+      "restrictedDelete": false
+    },
+    {
+      "cascadeDelete": true,
+      "childSObject": "PendingServiceRoutingInteractionInfo",
+      "deprecatedAndHidden": false,
+      "field": "TargetObjectId",
       "junctionIdListNames": [],
       "junctionReferenceTo": [],
       "relationshipName": null,
