@@ -1,0 +1,70 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "005ak00000DTixRAAT",
+      "createdByName": "Esdras Jesus",
+      "createdDate": "2025-05-02T00:26:19.000Z",
+      "fileName": "aura/loginForm",
+      "fullName": "loginForm",
+      "id": "0Abak0000039mq5CAA",
+      "lastModifiedById": "005ak00000DTixRAAT",
+      "lastModifiedByName": "Esdras Jesus",
+      "lastModifiedDate": "2025-05-02T00:26:19.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005ak00000DTixRAAT",
+      "createdByName": "Esdras Jesus",
+      "createdDate": "2025-05-02T00:26:19.000Z",
+      "fileName": "aura/setExpId",
+      "fullName": "setExpId",
+      "id": "0Abak0000039moTCAQ",
+      "lastModifiedById": "005ak00000DTixRAAT",
+      "lastModifiedByName": "Esdras Jesus",
+      "lastModifiedDate": "2025-05-02T00:26:19.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005ak00000DTixRAAT",
+      "createdByName": "Esdras Jesus",
+      "createdDate": "2025-05-02T00:26:19.000Z",
+      "fileName": "aura/setStartUrl",
+      "fullName": "setStartUrl",
+      "id": "0Abak0000039moUCAQ",
+      "lastModifiedById": "005ak00000DTixRAAT",
+      "lastModifiedByName": "Esdras Jesus",
+      "lastModifiedDate": "2025-05-02T00:26:19.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005ak00000DTixRAAT",
+      "createdByName": "Esdras Jesus",
+      "createdDate": "2025-05-02T00:26:19.000Z",
+      "fileName": "aura/forgotPassword",
+      "fullName": "forgotPassword",
+      "id": "0Abak0000039mq7CAA",
+      "lastModifiedById": "005ak00000DTixRAAT",
+      "lastModifiedByName": "Esdras Jesus",
+      "lastModifiedDate": "2025-05-02T00:26:19.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005ak00000DTixRAAT",
+      "createdByName": "Esdras Jesus",
+      "createdDate": "2025-05-02T00:26:19.000Z",
+      "fileName": "aura/selfRegister",
+      "fullName": "selfRegister",
+      "id": "0Abak0000039mq6CAA",
+      "lastModifiedById": "005ak00000DTixRAAT",
+      "lastModifiedByName": "Esdras Jesus",
+      "lastModifiedDate": "2025-05-02T00:26:19.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    }
+  ]
+}

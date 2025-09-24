@@ -1,0 +1,18 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "005ak00000DTixRAAT",
+      "createdByName": "Esdras Jesus",
+      "createdDate": "2025-09-24T01:49:26.000Z",
+      "fileName": "messageChannels/BoatMessageChannel.messageChannel",
+      "fullName": "BoatMessageChannel",
+      "id": "129ak00000EOYrhAAH",
+      "lastModifiedById": "005ak00000DTixRAAT",
+      "lastModifiedByName": "Esdras Jesus",
+      "lastModifiedDate": "2025-09-24T01:49:26.000Z",
+      "manageableState": "unmanaged",
+      "type": "LightningMessageChannel"
+    }
+  ]
+}
