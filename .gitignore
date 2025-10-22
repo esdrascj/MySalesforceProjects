@@ -1,1 +1,14 @@
+# Salesforce DX
+.sfdx
+.sf
+.localdevserver
+
+# Dependencies
 node_modules
+
+# IDEs
+settings.json
+
+# Misc
+apex.db
+*.log
